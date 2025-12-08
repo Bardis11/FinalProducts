@@ -1,6 +1,7 @@
 @echo off
-title KameraRestartLoop
+title Kamera-Restart-Loop
 color 0A
+set cas=15
 
 :loop
 cls
@@ -16,9 +17,7 @@ timeout /t 3 /nobreak >nul
 echo Spoustim Kamera aplikaci...
 start microsoft.windows.camera:
 
-echo [%date% %time%] === RESTART DOKONCEN ===
-echo Cekam 6 hodin (skryte)...
-echo.
-
-timeout /t 21600 /nobreak >nul
+echo [%date% %time%]  RESTART DOKONCEN 
+echo Cekam %cas%...
+timeout /t %cas% /nobreak >nul
 goto loop
